@@ -1,1 +1,2 @@
-# Data-Structure-Algorithms
+# datastructure
+Data Structure &amp; Algorithm Course
