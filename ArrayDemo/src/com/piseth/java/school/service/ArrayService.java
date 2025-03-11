@@ -61,6 +61,66 @@ public class ArrayService {
 		return newArray;
 	}
 	
+	public String[] removeElementBySpecificIndex2(String[] arr, int indexToRemove) {
+		// Validate index to remove 
+		if(indexToRemove < 0 || indexToRemove > arr.length - 1) {
+			throw new RuntimeException("Index out of range");
+		}		
+		
+		String[] newArr = new String[arr.length - 1];
+		
+		for(int i = 0; i < indexToRemove; i++) {
+			newArr[i] = arr[i];
+		}
+		
+		// shift left
+		for(int i = indexToRemove; i < newArr.length; i++) {
+			newArr[i] = arr[i + 1];
+		}
+		
+		return newArr;
+		
+	}
+	
+	public String[] removeElementBySpecificIndex(String[] arr, int indexToRemove) {
+		// Validate index to remove 
+		if(indexToRemove < 0 || indexToRemove > arr.length - 1) {
+			throw new RuntimeException("Index out of range");
+		}		
+		
+		String[] newArr = new String[arr.length - 1];
+		
+		for(int i = 0; i < newArr.length; i++) {
+			if(i < indexToRemove) {
+				newArr[i] = arr[i]; 
+			}else {
+				newArr[i] = arr[i + 1];
+			}
+		}
+		
+		return newArr;
+		
+	}
+	
+	public String pop(String[] arr) {
+		int lastIndex = arr.length - 1;
+		
+		String lastElement = arr[lastIndex];
+		arr = removeElementBySpecificIndex(arr, lastIndex);
+		
+		return lastElement;
+	}
+	
+	public String[] pop2(String[] arr) {
+		int lastIndex = arr.length - 1;
+		
+		String lastElement = arr[lastIndex];
+		arr = removeElementBySpecificIndex(arr, lastIndex);
+		System.out.println("Last Element: " + lastElement); //
+		
+		return arr;
+	}
+	
 	
 	
 	
