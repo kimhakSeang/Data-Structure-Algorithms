@@ -1,9 +1,13 @@
 package com.piseth.java.school.hashtable;
 
-public class HableTableDemo {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import com.piseth.java.school.HashTableArray;
+
+public class HableTableArrayListDemo {
 
 	public static void main(String[] args) {
-		HashTable hashTable = new HashTable();
+		HashTableArrayList hashTable = new HashTableArrayList();
 		
 		hashTable.put("iphone", "Iphone");
 		//hashTable.put("iphonex", "my iphone");
@@ -26,6 +30,12 @@ public class HableTableDemo {
 		*/
 		
 		System.out.println("Key iphone:"+ hashTable.get("#DELETED#"));
+		
+		for(int i =0; i<=9; i++) {
+			hashTable.put("key"+i, "value"+i);
+		}
+		
+		System.out.println(hashTable.get("key"+8));
 		
 		
 	}
