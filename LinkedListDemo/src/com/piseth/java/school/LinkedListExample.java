@@ -1,5 +1,7 @@
 package com.piseth.java.school;
 
+import java.util.HashSet;
+
 public class LinkedListExample {
 	
 	Node head;
@@ -124,6 +126,164 @@ public class LinkedListExample {
 		// current.next.data = 20
 		current.next = current.next.next;
 	}
+	
+	public void reverse() {
+		if(head == null || head.next == null) {
+			return; // Nothing to reverse
+		}
+		
+		Node prev = null;
+		Node current = head;
+		Node next = null;
+		
+		// 10->20->30->null  => 30->20 ->10->null
+		
+		while(current != null) {
+			next = current.next; // store next node
+			current.next = prev; // reverse the link
+			prev = current; 	// move prev forward 
+			current = next;		// move current forward
+		}
+		
+		head = prev;
+		
+		// next = 20
+		// 10->null *
+		// prev = 10
+		// current = 20
+		
+		
+		// next = 30
+		// 20->10 *
+		// prev = 20
+		// current = 30
+		
+		// next = null
+		// 30->20 *
+		// prev = 30
+		// current = null
+		
+		
+		// 10->null, 20->10, 30->20
+		
+		
+	}
+	
+	public Node findMiddle() {
+		if(head == null) {
+			System.out.println("List is empty.");
+			return null;
+		}
+		
+		Node slow = head;
+		Node fast = head;
+		
+		while( fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+		System.out.println("Middle node value =" + slow.data);
+		return slow;
+	}
+	
+	
+	public Node findNthNodeFromEnd(int n) {
+		if(head == null) {
+			System.out.println("List is empty.");
+			return null;
+		}
+		
+		Node first = head;
+		Node second = head;
+		
+		// Move first pointer n step ahead
+		for(int i = 0; i < n; i++) {
+			if(first == null) {
+				System.out.println("List has fewer than " + n + " nodes.");
+				return null;
+			}
+			first = first.next;
+		}
+		
+		// Move both pointer until first reach end
+		while(first != null) {
+			first = first.next;
+			second = second.next;
+		}
+		System.out.println("The " + n + " th node from End is: "+ second.data);
+		return second;
+	}
+	
+	public void removeDuplicateSorted() {
+		//10->20->20->30->40->null
+		Node current = head;
+		while(current != null && current.next != null) {
+			if(current.data == current.next.data) {
+				current.next = current.next.next; // Skip Duplicate
+			}else {
+				current = current.next; // Move forward only if no duplicate
+			}
+		}
+	}
+	
+	public void removeDuplicateUnorderedList() {
+		if(head == null) {
+			return;
+		}
+		
+		HashSet<Integer> set = new HashSet<>();
+		Node current = head;
+		Node prev = null;
+		
+		while(current != null) {
+			if(set.contains(current.data)) {
+				// remove duplicate
+				prev.next = current.next; 
+			}else {
+				set.add(current.data);
+				prev = current;
+			}
+			current = current.next;
+		}
+		// 10->20->10->40->40->50->null
+		
+		// * set : [10, 20]
+		
+		// add 10 to the set
+		// prev = 10
+		// current = 20
+		
+		// add 20 to set
+		// prev = 20
+		// current = 10
+		
+		
+		// 10->20->10->40
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 }
