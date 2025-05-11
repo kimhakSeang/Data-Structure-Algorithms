@@ -4,17 +4,19 @@ public class LinkedListDemoApp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		/*
 		LinkedListExample list = new LinkedListExample();
 		list.addAtEnd(30);
 		list.addAtEnd(20);
 		list.addAtEnd(40);
+		
 		list.addAtEnd(50);
 		list.addAtEnd(40);
 		list.addAtEnd(60);
 		list.addAtEnd(40);
 		
 		list.printList();
+		*/
 		/*
 		list.addAtBeginning(5);
 		list.printList();
@@ -38,8 +40,14 @@ public class LinkedListDemoApp {
 		//list.findMiddle();
 		//list.findNthNodeFromEnd(2);
 		
-		list.removeDuplicateUnorderedList();
-		list.printList();
+		//list.removeDuplicateUnorderedList();
+		//list.printList();
+		
+		
+		
+		
+		
+		
 
 	}
 
