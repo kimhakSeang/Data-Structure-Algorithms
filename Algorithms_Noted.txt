@@ -1,0 +1,10 @@
+-----------------------------
+
+
+
+
+
+
+Noted:
+	1. Java can't found main class:
+	   - click project -> build path -> config -> add new src
