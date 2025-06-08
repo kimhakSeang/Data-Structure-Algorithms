@@ -1,5 +1,6 @@
 package LinkList;
 
+import java.util.HashSet;
 import java.util.Objects;
 
 public class LinkListCustomize implements LinkList {
@@ -65,14 +66,38 @@ public class LinkListCustomize implements LinkList {
 
     }
 
+
     @Override
     public void reverse() {
-
+        if(head ==  null){
+            return;
+        }
+        Node current = head;
+        Node prev = null;
+        Node next = null;
+        // 1 2 3 4 5
+        while ( current.next != null ){ // 1 2 3 4
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        current.next = prev;     // 5-> 4
+        head = current;
     }
 
     @Override
     public Node findMiddle() {
-        return null;
+        if (head ==  null){
+            throw  new RuntimeException("LinkList is empty");
+        }
+        Node firstNode = head;
+        Node secondNode = head;
+        while(secondNode.next != null && secondNode.next.next != null){
+            firstNode = firstNode.next;
+            secondNode = secondNode.next.next;
+        }
+        return firstNode;
     }
 
     @Override
@@ -82,11 +107,37 @@ public class LinkListCustomize implements LinkList {
 
     @Override
     public void removeDuplicateSorted() {
+        if(head ==  null || head.next == null) return;
 
+        Node current = head;
+        while(current.next.next != null){
+            if (current.data == current.next.data){
+                current.next = current.next.next;
+            }
+            current = current.next;
+        }
+        if(current.data == current.next.data) {
+            current.next = current.next.next;
+        }
     }
 
     @Override
     public void removeDuplicateUnorderedList() {
+        if(head ==  null || head.next == null) return;
+
+        Node current = head;
+        HashSet<Integer> hashSet = new HashSet();
+        while(current.next.next != null){
+            hashSet.add(current.data);
+            if (hashSet.contains(current.next.data)){
+                current.next = current.next.next;
+            }else {
+                current = current.next;
+            }
+        }
+        if (hashSet.contains(current.next.data)){
+            current.next = current.next.next;
+        }
 
     }
 
