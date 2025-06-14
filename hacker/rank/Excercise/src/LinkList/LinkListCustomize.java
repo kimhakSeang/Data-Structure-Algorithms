@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Objects;
 
 public class LinkListCustomize implements LinkList {
-    private Node head;
+    Node head;
 
 
 
@@ -152,12 +152,65 @@ public class LinkListCustomize implements LinkList {
     }
 
     @Override
-    public Node mergeSortedList(Node head1, Node head2) {
-        return null;
+    public Node mergeSortedList(Node root1, Node root2) {
+        if(root1 == null) return root2;
+        if(root2 == null) return root1;
+
+        Node head = new Node(0);
+        Node tail = head;
+        while (root1 != null && root2!=null){
+            if(root1.data < root2.data){
+                tail.next = root1;
+                root1 = root1.next;
+            } else if (root1.data > root2.data) {
+                tail.next = root2;
+                root2 = root2.next;
+            }else{
+                tail.next = root1;
+                root1 = root1.next;
+                root2 = root2.next;
+            }
+            tail = tail.next;
+        }
+        if(root1 != null || root2 != null){
+            tail.next =  root1 != null ? root1 : root2;
+        }
+        return head.next;
     }
 
     @Override
-    public Node mergeUnsortedList(Node head1, Node head2) {
-        return null;
+    public void mergeSortedListV2(Node other) {
+        if(other == null || head == null) return;
+
+        Node headDummy = new Node(0);
+        Node tail = headDummy;
+
+        while(head != null && other!=null){
+            if(head.data  < other.data){
+                tail.next = head;
+                head = head.next;
+            }else if(head.data > other.data) {
+                tail.next = other;
+                other = other.next;
+            }else {
+                tail.next = head;
+                head = head.next;
+                other = other.next;
+            }
+            tail = tail.next;
+        }
+        if(head!=null || tail!=null){
+            tail.next = head!=null ? head : tail;
+        }
+        head = headDummy.next;
+    }
+
+
+    @Override
+    public void mergeUnsortedList(Node other) {
+        if(head == null) head = other;
+        Node current = head;
+        while(current.next != null) current = current.next;
+        current.next = other;
     }
 }

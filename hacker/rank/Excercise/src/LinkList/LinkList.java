@@ -24,9 +24,11 @@ public interface LinkList {
 
     void removeDuplicateUnorderedList();
 
-    Node mergeUnsortedList(Node head1, Node head2);
+    void mergeUnsortedList(Node other);
 
     Node mergeSortedList(Node head1, Node head2);
+
+    void mergeSortedListV2(Node other);
 
     void print();
 }
