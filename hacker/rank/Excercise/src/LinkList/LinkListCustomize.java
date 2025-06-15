@@ -53,17 +53,47 @@ public class LinkListCustomize implements LinkList {
 
     @Override
     public void removeAtBeginning() {
-
+        if(head == null){
+            throw new RuntimeException("LinkedList is empty!");
+        }
+        head = head.next;
     }
 
     @Override
     public void removeAtEnd() {
+        if(head == null){
+            throw new RuntimeException("LinkedList is empty!");
+        }
+        if(head.next == null ){
+            head = null;
+            return;
+        }
 
+        Node current = head;
+        while (current.next != null && current.next.next != null ){
+            current = current.next;
+        }
+        current.next = null;
     }
 
     @Override
     public void removeByValue(Integer value) {
+        if(head == null){
+            throw new RuntimeException("LinkedList is empty!");
+        }
+        if(head.data == value){
+            head = head.next;
+            return;
+        }
 
+        Node current = head;
+        Node prev = null;
+        while(current !=null && current.data != value){
+            prev = current;
+            current = current.next;
+        }
+        if (current == null ) return;
+        else prev.next = current.next;
     }
 
 

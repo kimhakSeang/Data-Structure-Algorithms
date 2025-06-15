@@ -106,22 +106,61 @@ public class Main {
 //        linkedList1.mergeSortedListV2(linkedList2.head);
 //        linkedList1.print();
 
-                System.out.println("==============MERGE UNSORTED LINKED LIST================");
+//         System.out.println("==============MERGE UNSORTED LINKED LIST================");
+//        LinkListCustomize linkedList1 = new LinkListCustomize();
+//        linkedList1.addAtEnd(10);
+//        linkedList1.addAtEnd(15);
+//        linkedList1.addAtEnd(30);
+//        linkedList1.addAtEnd(70);
+//        linkedList1.print();
+//
+//        System.out.println(">> List 2");
+//        LinkListCustomize linkedList2 = new LinkListCustomize();
+//        linkedList2.addAtEnd(20);
+//        linkedList2.addAtEnd(50);
+//        linkedList2.print();
+//        System.out.println("______________________________");
+//        linkedList1.mergeUnsortedList(linkedList2.head);
+//        linkedList1.print();
+
+
+//          System.out.println("==============REMOVE BEGIN================");
+//        LinkListCustomize linkedList1 = new LinkListCustomize();
+//        linkedList1.addAtEnd(10);
+//        linkedList1.addAtEnd(15);
+//        linkedList1.addAtEnd(30);
+//        linkedList1.addAtEnd(70);
+//        linkedList1.print();
+//        System.out.println("______________________________");
+//        linkedList1.removeAtBeginning();
+//        linkedList1.print();
+
+//        System.out.println("==============REMOVE END================");
+//        LinkListCustomize linkedList1 = new LinkListCustomize();
+//        linkedList1.addAtEnd(10);
+//        linkedList1.addAtEnd(15);
+//        linkedList1.addAtEnd(30);
+//        linkedList1.addAtEnd(70);
+//        linkedList1.print();
+//        System.out.println("______________________________");
+//        linkedList1.removeAtEnd();
+//        linkedList1.removeAtEnd();
+//        linkedList1.print();
+
+        System.out.println("==============REMOVE BY VALUE================");
         LinkListCustomize linkedList1 = new LinkListCustomize();
         linkedList1.addAtEnd(10);
         linkedList1.addAtEnd(15);
         linkedList1.addAtEnd(30);
         linkedList1.addAtEnd(70);
         linkedList1.print();
-
-        System.out.println(">> List 2");
-        LinkListCustomize linkedList2 = new LinkListCustomize();
-        linkedList2.addAtEnd(20);
-        linkedList2.addAtEnd(50);
-        linkedList2.print();
         System.out.println("______________________________");
-        linkedList1.mergeUnsortedList(linkedList2.head);
+        linkedList1.removeByValue(10);
+        linkedList1.removeByValue(15);
         linkedList1.print();
+
+
+
 
     }
 }
