@@ -1,4 +1,4 @@
-package LinkList;
+package linkList.single;
 
 public interface LinkList {
 

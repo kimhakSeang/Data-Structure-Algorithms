@@ -1,4 +1,4 @@
-package LinkList;
+package linkList.single;
 
 import java.util.HashSet;
 import java.util.Objects;
