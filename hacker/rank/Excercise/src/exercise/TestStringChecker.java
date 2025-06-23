@@ -21,7 +21,10 @@ public class TestStringChecker {
     }
 
     public static void main(String[] args) {
-        isValid("A");
+//        isValid("A");
+        String url = "http://localhost:8080/v1/user/inquiry";
+        String[] arrUrl = url.split("/");
+        System.out.println(arrUrl[arrUrl.length -1 ]);
     }
 
 }
