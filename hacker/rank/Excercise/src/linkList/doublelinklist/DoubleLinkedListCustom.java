@@ -37,16 +37,60 @@ public class DoubleLinkedListCustom implements DoubleLinkedList{
 
     @Override
     public void deleteBegin() {
+        if(head == null || head.next == null){
+            tail = null;
+            head = null;
+            return;
+        }
+        head = head.next;
+        head.prev = null;
 
     }
 
     @Override
     public void deleteEnd() {
-
+        if(tail == null || tail.prev == null){
+            tail = null;
+            head = null;
+            return;
+        }
+        tail = tail.prev;
+        tail.next = null;
     }
 
     @Override
     public void deleteElementByValue(int value) {
+        if(head == null){
+            head = null;
+            tail = null;
+            return;
+        }
+        Node currentHead = head;
+        while( currentHead != null && currentHead.data != value ){
+            currentHead = currentHead.next;
+        }
+
+        if(currentHead == null || currentHead.data != value) return;
+
+        if(currentHead.prev==null && currentHead.next == null){
+            head = null;
+            tail = null;
+            return;
+        }
+
+        if(currentHead.prev == null){
+            currentHead.next.prev=null;
+            tail = currentHead.next;
+            head = currentHead.next;
+        }else if (currentHead.next==null){
+            currentHead.prev.next=null;
+            tail = currentHead.prev;
+            head = currentHead.prev;
+
+        }else {
+            currentHead = currentHead.next;
+            currentHead.prev = currentHead.prev.prev;
+        }
 
     }
 

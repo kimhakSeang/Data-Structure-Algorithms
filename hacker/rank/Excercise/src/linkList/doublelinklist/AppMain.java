@@ -7,13 +7,25 @@ public class AppMain {
         doubleLL.insertAtHead(10);
         doubleLL.insertAtHead(15);
         doubleLL.insertAtHead(20);
-        doubleLL.insertAtTail(30);
-        doubleLL.insertAtTail(50);
-        doubleLL.insertAtTail(40);
+        doubleLL.insertAtTail(5);
+        doubleLL.insertAtTail(4);
+        doubleLL.insertAtTail(3);
 
         doubleLL.displayForward();
         doubleLL.displayBackward();
 
+        doubleLL.deleteBegin();
+        doubleLL.deleteBegin();
+        doubleLL.displayForward();
+
+        doubleLL.deleteEnd();
+        doubleLL.deleteEnd();
+        doubleLL.displayForward();
+
+//        doubleLL.deleteElementByValue(5);
+        doubleLL.deleteElementByValue(10);
+
+        doubleLL.displayForward();
 
     }
 }
