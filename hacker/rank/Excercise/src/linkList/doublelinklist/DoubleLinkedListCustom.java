@@ -113,4 +113,30 @@ public class DoubleLinkedListCustom implements DoubleLinkedList{
             current =  current.prev;
         }
     }
+
+    @Override
+    public boolean isCycle() {
+        if(head == null || head.next == null) return false;
+        Node slow = head;
+        Node fast = head.next.next;
+        while (fast.next !=null){
+            if (slow.data == fast.data) return true;
+
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return false;
+    }
+
+    public void createLoop(){
+        // Create a hard-coded linked list:
+        // 1 -> 3 -> 4
+        head = new Node(1);
+        head.next = new Node(3);
+        head.next.next = new Node(4);
+
+        // Create a loop
+        head.next.next.next = head.next;
+    }
 }

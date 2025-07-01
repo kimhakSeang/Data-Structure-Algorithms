@@ -9,5 +9,5 @@ public interface DoubleLinkedList {
     void deleteElementByValue(int value);
     void displayForward();
     void displayBackward();
-
+    boolean isCycle();
 }

@@ -1,8 +1,18 @@
 -----------------------------
+SOLID:
+- SRP: Single Responsibility Principle( One Class, One Purpose)
+- OCP: Open/Closed Principle (Open for extend, Closed for Modify)
+- LSP: Likov's Subtitution Principle ( Child Class subtitutable base class)
+- Interface Segregation Principle (Separarate interface to small to avoid method child class don't need implement)
+- Dependency Inversion Principle ( High-level(Core Bussiness Logic) soouldn't depend on low-level(Database, file IO, etc)
 
+DRY(Don't Repeat Yourself):  reuseable code to avoid redundancy
 
-
-
+KISS (keep it simple, stupid): 
+- Solve problems using simple logic, 
+- Use clear naming and structure, 
+- Break complex code into smaller parts, 
+- Only abstract if needed
 
 
 Noted:
