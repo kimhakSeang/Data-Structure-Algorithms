@@ -1,5 +1,8 @@
 package linkList.doublelinklist;
 
+import java.util.HashMap;
+import java.util.Hashtable;
+
 public class AppMain {
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package exercise;
+package exercise1;
 
 public class TestStringChecker {
     private static final String[] LIST_VALID_PATTERN = {"A"};

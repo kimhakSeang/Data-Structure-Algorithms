@@ -1,4 +1,4 @@
-package exercise;
+package exercise1;
 
 //    សរសេរ method ដើម្បីពិនិត្យថា String Valid ឬទេ។
 //    ឧទាហរណ៍ "()[{}]" Valid
