@@ -14,6 +14,24 @@ KISS (keep it simple, stupid):
 - Break complex code into smaller parts, 
 - Only abstract if needed
 
+AGILE Methodology: 
+=> is project Management and Software Development approach that aims to be more effective.
+=> is a way to manage the projects by breaking them into smaller parts.
+=> is a mindset and methidology for developing products in small, iterative cycles with continues feedback and improvement.
+
+- Agile normally have 6 stages:  
+  1. Plainng
+  2. Requirement Analysis
+  3. Design
+  4. Implement 
+  5. Testing
+  6. Deployment
+
+
+SRUM: `
+
+HashTable: 
+
 
 Noted:
 	1. Java can't found main class:
