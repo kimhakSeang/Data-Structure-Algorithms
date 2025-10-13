@@ -28,9 +28,7 @@ AGILE Methodology:
   6. Deployment
 
 
-SRUM: `
-
-HashTable: 
+SRUM: 
 
 
 Noted:
