@@ -10,9 +10,7 @@ public class LinkedListDemo2 {
 		list1.addAtEnd(40);
 		
 		LinkedListExample list2 = new LinkedListExample();
-		list2.addAtEnd(10);
 		list2.addAtEnd(15);
-		list2.addAtEnd(22);
 		
 		//list1.me
 		//Node mergedList = LinkedListExample.mergeUnsortedList(list1.head, list2.head);
